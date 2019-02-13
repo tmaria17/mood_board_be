@@ -1,11 +1,10 @@
 require 'rails_helper'
 
-RSpec.describe JournalEntry do
+RSpec.describe Affirmation do
   describe 'validations' do
-    it {should validate_presence_of(:entry_text)}
+    it {should validate_presence_of(:affirmation_text)}
   end
   describe 'relationships' do
-   it {should have_many(:tone_responses)}
    it {should belong_to (:user)}
   end
 end
