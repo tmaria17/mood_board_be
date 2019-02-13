@@ -1,6 +1,7 @@
 language: ruby
-rvm:
-  - 2.2
-  - jruby
-  - truffleruby
-  - 2.0.0-p247
+rbenv:
+- 2.4.1
+services:
+- postgresql
+before_script:
+- bundle exec rake db:{drop,create,migrate,seed}
