@@ -6,8 +6,8 @@ RSpec.describe User do
     it {should validate_presence_of(:email)}
   end
   describe 'relationships' do
-   it {should have_many(:tone_responses)}
    it {should have_many(:journal_entries)}
    it {should have_many(:affirmations)}
- end
+   it {should have_many(:tone_responses).through(:journal_entries)}
+  end
 end
