@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_13_034142) do
+ActiveRecord::Schema.define(version: 2019_02_13_203129) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,8 @@ ActiveRecord::Schema.define(version: 2019_02_13_034142) do
     t.bigint "journal_entry_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.decimal "primary_score"
+    t.decimal "secondary_score"
     t.index ["journal_entry_id"], name: "index_tone_responses_on_journal_entry_id"
   end
 
