@@ -18,9 +18,10 @@ VCR.configure do |config|
   config.cassette_library_dir = 'spec/cassettes'
   config.hook_into :webmock, :faraday
   config.configure_rspec_metadata!
-  config.filter_sensitive_data("<bing_map_api_key>") { ENV['BING_MAP_API_KEY'] }
-  config.filter_sensitive_data("<dark_sky_api_key>") { ENV['DARK_SKY_API_KEY'] }
-  config.filter_sensitive_data("<giphy_api_key>") { ENV['GIPHY_API_KEY'] }
+
+  config.filter_sensitive_data("<tone_analyzer_dev_key>") { ENV['WATSON_DEV_API_KEY'] }
+  config.filter_sensitive_data("<tone_analyzer_prod_key>") { ENV['WATSON_PRODUCTION_API_KEY'] }
+
   config.allow_http_connections_when_no_cassette = true
 end
 
