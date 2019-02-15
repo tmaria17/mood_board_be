@@ -13,5 +13,8 @@ describe WatsonToneService do
     expect(service.get_tone[:document_tone][:tones][0]).to have_key(:score)
     expect(service.get_tone[:document_tone][:tones][0]).to have_key(:tone_id)
     expect(service.get_tone[:document_tone][:tones][0]).to have_key(:tone_name)
+    expect(service.get_tone[:document_tone][:tones][0][:tone_name]).to eq("joy")
+    expect(service.get_tone[:document_tone][:tones][0][:tone_id]).to eq("joy")
+    expect(service.get_tone[:document_tone][:tones][0][:tone_id]).to eq(0.928277)
   end
 end
