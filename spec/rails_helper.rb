@@ -9,6 +9,14 @@ require File.expand_path('../../config/environment', __FILE__)
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
+require 'vcr'
+require 'webmock/rspec'
+require 'database_cleaner'
+require 'simplecov'
+require 'factory_bot_rails'
+
+WebMock.disable_net_connect!(allow: ['http://localhost:3000/'])
+
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -34,9 +42,47 @@ rescue ActiveRecord::PendingMigrationError => e
   puts e.to_s.strip
   exit 1
 end
+
+SimpleCov.start "rails"
+SimpleCov.start do
+  add_filter "/spec"
+end
+
 RSpec.configure do |config|
+
+  VCR.configure do |config|
+    config.ignore_localhost = true
+    config.cassette_library_dir = 'spec/cassettes'
+    config.hook_into :webmock, :faraday
+    config.configure_rspec_metadata!
+
+    config.filter_sensitive_data("<tone_analyzer_dev_key>") { ENV['WATSON_DEV_API_KEY'] }
+    config.filter_sensitive_data("<tone_analyzer_prod_key>") { ENV['WATSON_PRODUCTION_API_KEY'] }
+
+    config.allow_http_connections_when_no_cassette = true
+  end
+
+  Shoulda::Matchers.configure do |config|
+      config.integrate do |with|
+      with.test_framework :rspec
+      with.library :rails
+    end
+  end
+
+  DatabaseCleaner.strategy = :truncation
+
+  RSpec.configure do |config|
+    config.before(:all) do
+      DatabaseCleaner.clean
+    end
+    config.after(:each) do
+      DatabaseCleaner.clean
+    end
+
+  config.include FactoryBot::Syntax::Methods
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
+
 
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
@@ -62,21 +108,6 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
-  config.before(:suite) do
-    DatabaseCleaner.strategy = :transaction
-    DatabaseCleaner.clean_with(:truncation)
-  end
 
-  config.around(:each) do |example|
-    DatabaseCleaner.cleaning do
-      example.run
-    end
   end
 end
-
-Shoulda::Matchers.configure do |config|
-  config.integrate do |with|
-    with.test_framework :rspec
-    with.library :rails
-  end
- end
