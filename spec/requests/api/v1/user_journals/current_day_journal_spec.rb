@@ -14,7 +14,12 @@ describe "GET /api/v1/users/:id/journals?date=today" do
 
     expect(response.status).to eq(200)
     expect(journal_response).to have_key :data
-    expect(journal_response[:data]).to be_an Array
-    expect(journal_response[:data].first).to have_key :attributes
+    expect(journal_response[:data]).to have_key :attributes
+    expect(journal_response[:data]).to have_key :id
+    expect(journal_response[:data]).to have_key :type
+    expect(journal_response[:data][:attributes]).to have_key :created_at
+    expect(journal_response[:data][:attributes]).to have_key :entry_text
+    expect(journal_response[:data][:attributes]).to have_key :primary_score
+    expect(journal_response[:data][:attributes]).to have_key :primary_tone
   end
 end
