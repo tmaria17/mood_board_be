@@ -4,9 +4,12 @@ class WatsonToneService
   end
 
   def get_tone
-    get_json("/tone-analyzer/api/v3/tone?version=2017-09-21/&text=#{@text}")
+    get_json(
+      conn.post do |req|
+        req.url "/tone-analyzer/api/v3/tone?version=2017-09-21"
+        req.body = { text: @text }.to_json
+      end.body)
   end
-
 
 private
   def conn
@@ -18,7 +21,7 @@ private
     end
   end
 
-  def get_json(url)
-    JSON.parse(conn.get(url).body, symbolize_names: true)
+  def get_json(response)
+    JSON.parse(response, symbolize_names: true)
   end
 end
