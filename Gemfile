@@ -26,7 +26,7 @@ group :development, :test do
   gem 'webmock'
   gem 'vcr'
   gem 'database_cleaner'
-  gem 'factory_bot'
+  gem 'factory_bot_rails'
 
 end
 

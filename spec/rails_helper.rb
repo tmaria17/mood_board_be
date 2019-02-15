@@ -13,6 +13,7 @@ require 'vcr'
 require 'webmock/rspec'
 require 'database_cleaner'
 require 'simplecov'
+require 'factory_bot_rails'
 
 WebMock.disable_net_connect!(allow: ['http://localhost:3000/'])
 
