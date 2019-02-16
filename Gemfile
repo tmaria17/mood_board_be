@@ -12,6 +12,9 @@ gem 'figaro'
 gem 'fast_jsonapi'
 gem 'bcrypt', '~> 3.1.7'
 gem 'rack-cors', require: 'rack/cors'
+gem 'crono'
+gem 'haml'
+gem 'sinatra', require: nil
 
 
 group :development, :test do
