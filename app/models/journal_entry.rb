@@ -7,9 +7,9 @@ class JournalEntry < ApplicationRecord
   end
 
   def get_tone_results
-    service = tone_analyzer_service
+    service = WatsonToneService.new(self.entry_text)
     results = service.get_tone
-
+    
     tones = results[:document_tone][:tones]
     update_data = {}
     if tones.length == 1
