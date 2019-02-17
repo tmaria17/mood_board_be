@@ -7,7 +7,8 @@ class JournalEntry < ApplicationRecord
   end
 
   def get_tone_results
-    results = tone_analyzer_results
+    service = tone_analyzer_service
+    results = service.get_tone
 
     tones = results[:document_tone][:tones]
     update_data = {}
