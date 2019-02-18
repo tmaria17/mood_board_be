@@ -1,0 +1,66 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://gateway.watsonplatform.net/tone-analyzer/api/v3/tone?version=2017-09-21
+    body:
+      encoding: UTF-8
+      string: '{"text":"dogs are awesome"}'
+    headers:
+      Authorization:
+      - "<WATSON_DEV_BEARER_KEY>"
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      x-backside-transport:
+      - OK OK
+      content-type:
+      - application/json
+      x-powered-by:
+      - Servlet/3.1
+      access-control-allow-origin:
+      - "*"
+      x-service-api-version:
+      - 3.5.8; 2017-09-21
+      x-service-build-number:
+      - '2019-01-28T06:02:27'
+      cache-control:
+      - no-store
+      pragma:
+      - no-cache
+      x-xss-protection:
+      - 1; mode=block
+      x-content-type-options:
+      - nosniff
+      content-security-policy:
+      - default-src 'none'
+      content-language:
+      - en-US
+      x-global-transaction-id:
+      - 7ecac92c5c69f0f050bc2081
+      x-dp-watson-tran-id:
+      - gateway01-1354506369
+      x-dp-transit-id:
+      - gateway01-1354506369
+      strict-transport-security:
+      - max-age=31536000;
+      vary:
+      - Accept-Encoding
+      date:
+      - Sun, 17 Feb 2019 23:40:32 GMT
+      content-length:
+      - '82'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"document_tone":{"tones":[{"score":0.928277,"tone_id":"joy","tone_name":"Joy"}]}}'
+    http_version: 
+  recorded_at: Sun, 17 Feb 2019 23:40:32 GMT
+recorded_with: VCR 4.0.0

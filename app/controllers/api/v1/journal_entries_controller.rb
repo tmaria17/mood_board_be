@@ -2,20 +2,22 @@ class Api::V1::JournalEntriesController < ApplicationController
 
   def show
     if params[:date] == "today"
-      journal = JournalEntry.find_or_create_by(created_at: Date.today)
+      journal = JournalEntry.where(created_at: Date.today).first_or_create(user_id: params[:user_id])
+
       render json: JournalEntrySerializer.new(journal)
     else
-      #render the journal for the date requested
     end
   end
 
   def update
     if params[:date] == "today"
-      journal = JournalEntry.find_by(created_at: Date.today)
+      journal = JournalEntry.find_user_daily_journal(params[:user_id])
       journal.update(journal_params)
+      journal.save
+      journal.get_tone_results
+
       render status: 202, json: JournalEntrySerializer.new(journal)
     else
-      #update the journal for the date requested
     end
   end
 

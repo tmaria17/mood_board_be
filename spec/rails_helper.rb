@@ -56,8 +56,9 @@ RSpec.configure do |config|
     config.hook_into :webmock, :faraday
     config.configure_rspec_metadata!
 
-    config.filter_sensitive_data("<tone_analyzer_dev_key>") { ENV['WATSON_DEV_API_KEY'] }
-    config.filter_sensitive_data("<tone_analyzer_prod_key>") { ENV['WATSON_PRODUCTION_API_KEY'] }
+    config.filter_sensitive_data("<WATSON_DEV_API_KEY>") { ENV['WATSON_DEV_API_KEY'] }
+    config.filter_sensitive_data("<WATSON_PRODUCTION_API_KEY>") { ENV['WATSON_PRODUCTION_API_KEY'] }
+    config.filter_sensitive_data("<WATSON_DEV_BEARER_KEY>") { ENV['WATSON_DEV_BEARER_KEY'] }
 
     config.allow_http_connections_when_no_cassette = true
   end
