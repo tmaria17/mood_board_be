@@ -13,6 +13,7 @@ class Api::V1::JournalEntriesController < ApplicationController
     if params[:date] == "today"
       journal = JournalEntry.find_user_daily_journal(params[:user_id])
       journal.update(journal_params)
+      journal.save
       journal.get_tone_results
 
       render status: 202, json: JournalEntrySerializer.new(journal)

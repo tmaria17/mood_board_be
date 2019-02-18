@@ -22,7 +22,10 @@ describe "GET /api/v1/users/:id/journals?date=today" do
     expect(journal_response[:data][:attributes]).to have_key :entry_text
     expect(journal_response[:data][:attributes][:entry_text]).to eq journal_entry.entry_text
     expect(journal_response[:data][:attributes]).to have_key :tones
-    expect(journal_response[:data][:attributes][:tones].first[:primary_tone]).to eq "Sadness"
+    expect(journal_response[:data][:attributes][:tones]).to be_a Hash
+    expect(journal_response[:data][:attributes][:tones]).to have_key :primary_tone
+    expect(journal_response[:data][:attributes][:tones]).to have_key :primary_score
+    expect(journal_response[:data][:attributes][:tones][:primary_tone]).to_not be nil
   end
 
   it "Returns a blank journal entry for the current date if one doesnt exist yet" do
@@ -43,8 +46,6 @@ describe "GET /api/v1/users/:id/journals?date=today" do
     expect(journal_response[:data][:attributes]).to have_key :entry_text
     expect(journal_response[:data][:attributes][:entry_text]).to be nil
     expect(journal_response[:data][:attributes]).to have_key :tones
-    expect(journal_response[:data][:attributes][:tones]).to be_an Array
-    expect(journal_response[:data][:attributes][:tones].length).to eq 0
-
+    expect(journal_response[:data][:attributes][:tones]).to be nil
   end
 end
