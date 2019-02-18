@@ -12,7 +12,6 @@ describe "GET /api/v1/users/:id/affirmations?date=YYYY-MM" do
 
 
     get "/api/v1/users/#{user_1.id}/affirmations?date=2019-02"
-
     affirmations = JSON.parse(response.body, symbolize_names: true)
 
     expect(affirmations).to have_key(:data)
