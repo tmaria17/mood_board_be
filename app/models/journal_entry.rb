@@ -7,7 +7,8 @@ class JournalEntry < ApplicationRecord
   end
 
   def get_tone_results
-    results = tone_analyzer_results
+    service = WatsonToneService.new(self.entry_text)
+    results = service.get_tone
 
     tones = results[:document_tone][:tones]
     update_data = {}
@@ -28,7 +29,7 @@ class JournalEntry < ApplicationRecord
   end
 
   def entry_tones
-    res = ToneResponse.where(journal_entry_id: self.id).select(:primary_tone, :primary_score, :id)
+    tone_response
   end
 
   private
