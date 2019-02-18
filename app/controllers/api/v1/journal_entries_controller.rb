@@ -3,9 +3,7 @@ class Api::V1::JournalEntriesController < ApplicationController
   def show
     if params[:date] == "today"
       journal = JournalEntry.where(created_at: Date.today).first_or_create(user_id: params[:user_id])
-        # if journal.entry_text != nil
-        #   journal.get_tone_results
-        # end
+
       render json: JournalEntrySerializer.new(journal)
     else
     end
