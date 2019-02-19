@@ -12,6 +12,7 @@ Rails.application.routes.draw do
         get '/calendar', to: "calendar#show"
         resources :journal_entries, only: [:new, :create, :index]
         resources :affirmations, only: [:new, :create, :show, :index]
+        resources :tone_responses, only: [:new, :create, :show, :index]
       end
     end
   end
