@@ -1,9 +1,14 @@
 class AffirmationWrapperSerializer
   include FastJsonapi::ObjectSerializer
-  attributes :date
+  attributes :date, :user_id
   attribute :affirmations do |object|
-                object.get_affirmation_text.map do |affirmation_obj|
-                  Hash['affirmation_text', affirmation_obj]
-                end
-              end
+    object.affirmation_objects.map do |aff|
+      hash = Hash.new
+      date = (aff.created_at).strftime('%Y-%m-%d')
+      hash[:date] = date
+      hash[:affirmation_text] = aff.affirmation_text
+      hash[:tone] = ToneResponse.where(created_at: date).first.primary_tone
+      hash
+    end
+  end
 end
