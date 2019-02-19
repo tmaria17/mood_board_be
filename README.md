@@ -144,34 +144,50 @@ JSON Response:
 ```
 {
     "data": {
-        "id": null,
+        "id": "2019-02-19 22:46:29 +0000",
         "type": "affirmation_wrapper",
         "attributes": {
-            "date": "2019-01",
+            "date": "2019-02",
             "affirmations": [
                 {
-                    "affirmation_text": "Be kind and have courage."
+                    "date": "2019-02-12",
+                    "affirmation_text": "I am beautiful.",
+                    "tone": "confident"
                 },
                 {
-                    "affirmation_text": "I am beautiful."
+                    "date": "2019-02-18",
+                    "affirmation_text": "I am kind.",
+                    "tone": "anger"
                 },
                 {
-                    "affirmation_text": "I am smart."
+                    "date": "2019-02-17",
+                    "affirmation_text": "I am smart.",
+                    "tone": "sadness"
                 },
                 {
-                    "affirmation_text": "Trust your instincts."
+                    "date": "2019-02-16",
+                    "affirmation_text": "You can do this.",
+                    "tone": "tentative"
                 },
                 {
-                    "affirmation_text": "Silence your doubt."
+                    "date": "2019-02-15",
+                    "affirmation_text": "Believe in yourself.",
+                    "tone": "joy"
                 },
                 {
-                    "affirmation_text": "Give yourself grace."
+                    "date": "2019-02-14",
+                    "affirmation_text": "You are loved.",
+                    "tone": "confident"
                 },
                 {
-                    "affirmation_text": "Enjoy the journey."
+                    "date": "2019-02-13",
+                    "affirmation_text": "I am important.",
+                    "tone": "analytical"
                 },
                 {
-                    "affirmation_text": "You are a BOSS."
+                    "date": "2019-02-12",
+                    "affirmation_text": "I am worthy.",
+                    "tone": "confident"
                 }
             ]
         }
