@@ -205,6 +205,83 @@ The request must contain a request body in the following format.
 
 If the affirmation is successfully saved, the server will return a 201 (created) status, or a 400 status if the POST is not successful.
 
+### Endpoint: `GET /api/v1/users/1/tone_responses?date=YYYY-MM`
+
+This endpoint returns the primary tone and date for all the tone_responses in a queried month (YYYY-MM).
+
+Request Requirements: None
+
+JSON Response:
+```
+{
+    "data": [
+        {
+            "id": "2019-02-12",
+            "type": "tone_response",
+            "attributes": {
+                "primary_tone": "confident"
+            }
+        },
+        {
+            "id": "2019-02-18",
+            "type": "tone_response",
+            "attributes": {
+                "primary_tone": "anger"
+            }
+        },
+        {
+            "id": "2019-02-17",
+            "type": "tone_response",
+            "attributes": {
+                "primary_tone": "sadness"
+            }
+        },
+        {
+            "id": "2019-02-16",
+            "type": "tone_response",
+            "attributes": {
+                "primary_tone": "tentative"
+            }
+        },
+        {
+            "id": "2019-02-15",
+            "type": "tone_response",
+            "attributes": {
+                "primary_tone": "joy"
+            }
+        },
+        {
+            "id": "2019-02-14",
+            "type": "tone_response",
+            "attributes": {
+                "primary_tone": "confident"
+            }
+        },
+        {
+            "id": "2019-02-13",
+            "type": "tone_response",
+            "attributes": {
+                "primary_tone": "analytical"
+            }
+        },
+        {
+            "id": "2019-02-11",
+            "type": "tone_response",
+            "attributes": {
+                "primary_tone": "fear"
+            }
+        },
+        {
+            "id": "2019-02-19",
+            "type": "tone_response",
+            "attributes": {
+                "primary_tone": "sadness"
+            }
+        }
+    ]
+}
+```
+
 ## Prerequisites
 
 * Ruby v. 2.4
