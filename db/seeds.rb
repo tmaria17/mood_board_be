@@ -13,15 +13,6 @@ Affirmation.create(created_at: current_date - 5.days, affirmation_text: "You are
 Affirmation.create(created_at: current_date - 6.days, affirmation_text: "I am important.", user: user_1)
 Affirmation.create(created_at: current_date - 7.days, affirmation_text: "I am worthy.", user: user_1)
 
-# Affirmation.create(created_at: current_date - 31.days, affirmation_text: "Be kind and have courage.", user: user_1)
-# Affirmation.create(created_at: current_date - 33.days, affirmation_text: "I am beautiful.", user: user_1)
-# Affirmation.create(created_at: current_date - 33.days, affirmation_text: "I am smart.", user: user_1)
-# Affirmation.create(created_at: current_date - 34.days, affirmation_text: "Trust your instincts.", user: user_1)
-# Affirmation.create(created_at: current_date - 35.days, affirmation_text: "Silence your doubt.", user: user_1)
-# Affirmation.create(created_at: current_date - 36.days, affirmation_text: "Give yourself grace.", user: user_1)
-# Affirmation.create(created_at: current_date - 37.days, affirmation_text: "Enjoy the journey.", user: user_1)
-# Affirmation.create(created_at: current_date - 38.days, affirmation_text: "You are a BOSS.", user: user_1)
-
 entry_1 = JournalEntry.create(entry_text: "I think finally I may have an actual writing job. I have submitted some articles for a particular site. I have had alot of emails with this individual back and forth. Finally he has agreed to pay me for my work. I am awaiting answer this week as to the prior work. I would like to get some payment before I continue writing. I think that is only fair. I am crossing my fingers that everything works out. It is not alot of compensation, but I am going to fight for my personal worth.", user: user_1, created_at: current_date - 7.days)
 
 ToneResponse.create(primary_tone: "confident", primary_score: 0.77, journal_entry: entry_1, created_at: current_date - 7.days)
