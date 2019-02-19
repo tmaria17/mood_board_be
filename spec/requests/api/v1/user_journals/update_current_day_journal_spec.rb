@@ -2,7 +2,14 @@ require "rails_helper"
 require "date"
 
 describe "PATCH /api/v1/users/:id/journals?date=today" do
-  xit "Updates existing journal entry for the current date with the submitted text" do
+
+  before(:each) do
+    stub_request(:post, /gateway.watsonplatform.net/).
+      to_return(body: File.read("./spec/fixtures/tone_analyzer_results.json"))
+  end
+
+  it "Updates existing journal entry for the current date with the submitted text" do
+
     user = create(:user)
     journal_entry = create(:journal_entry, created_at: Date.today, user: user, entry_text: "I had such a bad day today.")
     tone_response = create(:tone_response, primary_tone: "Sadness", journal_entry: journal_entry)
@@ -29,7 +36,7 @@ describe "PATCH /api/v1/users/:id/journals?date=today" do
     expect(journal_response[:data][:attributes][:tones][:primary_tone]).to eq "joy"
   end
 
-  xit "Updates blank journal entry for the current date with the submitted text" do
+  it "Updates blank journal entry for the current date with the submitted text" do
     user = create(:user)
     journal_entry = create(:journal_entry, created_at: Date.today, user: user, entry_text: nil)
 
