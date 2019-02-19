@@ -1,6 +1,7 @@
 class WatsonToneService
-  def initialize(text)
+  def initialize(text, api_token)
     @text=text
+    @token=api_token
   end
 
   def get_tone
@@ -12,10 +13,11 @@ class WatsonToneService
   end
 
 private
+
   def conn
     url = "https://gateway.watsonplatform.net"
     Faraday.new(url: url) do |faraday|
-      faraday.headers["Authorization"] = ENV['WATSON_DEV_BEARER_KEY']
+      faraday.headers["Authorization"] = "Bearer" +" #{@token}"
       faraday.headers['Content-Type'] = 'application/json'
       faraday.adapter Faraday.default_adapter
     end

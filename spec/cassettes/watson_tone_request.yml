@@ -8,7 +8,7 @@ http_interactions:
       string: '{"text":"dogs are awesome"}'
     headers:
       Authorization:
-      - "<WATSON_DEV_BEARER_KEY>"
+      - Bearer eyJraWQiOiIyMDE3MTEyOSIsImFsZyI6IlJTMjU2In0.eyJpYW1faWQiOiJpYW0tU2VydmljZUlkLTMwMTc2YmE3LTllNDQtNGI5My1iMThlLWJmYzQzM2NmYTVkZCIsImlkIjoiaWFtLVNlcnZpY2VJZC0zMDE3NmJhNy05ZTQ0LTRiOTMtYjE4ZS1iZmM0MzNjZmE1ZGQiLCJyZWFsbWlkIjoiaWFtIiwiaWRlbnRpZmllciI6IlNlcnZpY2VJZC0zMDE3NmJhNy05ZTQ0LTRiOTMtYjE4ZS1iZmM0MzNjZmE1ZGQiLCJzdWIiOiJTZXJ2aWNlSWQtMzAxNzZiYTctOWU0NC00YjkzLWIxOGUtYmZjNDMzY2ZhNWRkIiwic3ViX3R5cGUiOiJTZXJ2aWNlSWQiLCJ1bmlxdWVfaW5zdGFuY2VfY3JucyI6WyJjcm46djE6Ymx1ZW1peDpwdWJsaWM6dG9uZS1hbmFseXplcjp1cy1zb3V0aDphLzAxZDIyMWJjZmVhODQxNjM4NWU5MWRlMDhiYTg5MTZkOjQ0MDRlMTYzLTg5YTMtNDNlNi1hOTE0LTgwYzkwYmY5YTljMTo6Il0sImFjY291bnQiOnsidmFsaWQiOnRydWUsImJzcyI6IjAxZDIyMWJjZmVhODQxNjM4NWU5MWRlMDhiYTg5MTZkIn0sImlhdCI6MTU1MDYwNTQ1OCwiZXhwIjoxNTUwNjA5MDU4LCJpc3MiOiJodHRwczovL2lhbS5ibHVlbWl4Lm5ldC9pZGVudGl0eSIsImdyYW50X3R5cGUiOiJ1cm46aWJtOnBhcmFtczpvYXV0aDpncmFudC10eXBlOmFwaWtleSIsInNjb3BlIjoiaWJtIG9wZW5pZCIsImNsaWVudF9pZCI6ImJ4IiwiYWNyIjoxLCJhbXIiOlsicHdkIl19.Bb7cYA8f9Htz1w2LgaWrZdm0qyLJRSRzYtVULvf0ra49QN6QUfAmFPkH7qxZpubDNNDrOt-9GzYrWeSrKFly5a_iMKCVtWnZKVXiJEu3SPfFz92d0vs6JmfHR0uCd_yvKHLt7bfDhuzUG4qSffqxBM59eiMgK7AdiqdwPoLGGDY0vzEzSqHpliUXt0uwHeFE1vx4pLKSt7ykrNbCQOTATal2OcmYV2DaDrO52lky4Ih_CrYxeQtd8OMYb7rda-XIWV8wZB0XtnWuo7VPs05SROymFzgnJmoci_X-UWOKfaMngpVQOGrJX-ebESHU5LYkHD_uyAuEPoUzVReICpiPsw
       Content-Type:
       - application/json
       User-Agent:
@@ -43,17 +43,17 @@ http_interactions:
       content-language:
       - en-US
       x-global-transaction-id:
-      - 7ecac92c5c69f0f050bc2081
+      - 7ecac92c5c6c5c938a9477ad
       x-dp-watson-tran-id:
-      - gateway01-1354506369
+      - gateway01-2324985773
       x-dp-transit-id:
-      - gateway01-1354506369
+      - gateway01-2324985773
       strict-transport-security:
       - max-age=31536000;
       vary:
       - Accept-Encoding
       date:
-      - Sun, 17 Feb 2019 23:40:32 GMT
+      - Tue, 19 Feb 2019 19:44:20 GMT
       content-length:
       - '82'
       connection:
@@ -62,5 +62,5 @@ http_interactions:
       encoding: UTF-8
       string: '{"document_tone":{"tones":[{"score":0.928277,"tone_id":"joy","tone_name":"Joy"}]}}'
     http_version: 
-  recorded_at: Sun, 17 Feb 2019 23:40:32 GMT
+  recorded_at: Tue, 19 Feb 2019 19:44:20 GMT
 recorded_with: VCR 4.0.0

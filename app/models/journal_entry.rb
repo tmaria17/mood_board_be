@@ -7,8 +7,7 @@ class JournalEntry < ApplicationRecord
   end
 
   def get_tone_results
-    service = WatsonToneService.new(self.entry_text)
-    results = service.get_tone
+    results = tone_analyzer_results
 
     tones = results[:document_tone][:tones]
     update_data = {}
@@ -33,9 +32,13 @@ class JournalEntry < ApplicationRecord
   end
 
   private
+    def ibm_authorization_service
+      @service ||= IbmApiAuthService.new
+    end
 
     def tone_analyzer_service
-      WatsonToneService.new(self.entry_text)
+      token = ibm_authorization_service.access_token
+      WatsonToneService.new(self.entry_text, token)
     end
 
     def tone_analyzer_results

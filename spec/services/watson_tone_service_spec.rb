@@ -1,12 +1,14 @@
 require 'rails_helper'
 describe WatsonToneService do
   it 'exists' do
-      service = WatsonToneService.new("dogs+are+awesome")
+      service = WatsonToneService.new("dogs+are+awesome", "example_token")
       expect(service).to be_a(WatsonToneService)
   end
   it "returns a tone" do
+      ibm_auth = IbmApiAuthService.new
+      token = ibm_auth.access_token
     VCR.use_cassette("watson_tone_request") do
-      service = WatsonToneService.new("dogs are awesome")
+      service = WatsonToneService.new("dogs are awesome", token)
       results = service.get_tone
 
       expect(results).to be_a(Hash)
