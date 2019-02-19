@@ -1,6 +1,6 @@
 class AffirmationWrapperSerializer
   include FastJsonapi::ObjectSerializer
-  attributes :date, :user_id
+  attributes :date
   attribute :affirmations do |object|
     object.affirmation_objects.map do |aff|
       hash = Hash.new
