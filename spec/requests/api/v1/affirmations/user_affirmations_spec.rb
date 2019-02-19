@@ -6,10 +6,13 @@ describe "Affirmation Endpoints" do
     user_1 = create(:user)
     user_2 = User.new(name: "Jake", email: "ilikeshakes@gmail.com", password: "cat")
 
+    journal = create(:journal_entry, created_at: Date.today, user: user_1)
+    tone_response_1 = create(:tone_response, created_at: Date.today, journal_entry: journal )
     affirmation_1 = create(:affirmation, created_at: Date.today, user: user_1)
-    affirmation_2 = create(:affirmation, created_at: Date.today, user: user_2)
-    affirmation_3 = create(:affirmation, created_at: Date.today, user: user_1)
 
+    journal_2 = create(:journal_entry, created_at: Date.today - 1.days, user: user_1)
+    tone_response_2 = create(:tone_response, created_at: Date.today - 1.days, journal_entry: journal_2)
+    affirmation_2 = create(:affirmation, created_at: Date.today - 1.days, user: user_1)
 
     get "/api/v1/users/#{user_1.id}/affirmations?date=2019-02"
     affirmations = JSON.parse(response.body, symbolize_names: true)

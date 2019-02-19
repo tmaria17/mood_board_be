@@ -1,14 +1,14 @@
 class AffirmationWrapper
-  attr_reader :id, :affirmation_text_array, :date
+  attr_reader :id, :user_id, :date
   def initialize(user_id, date)
-    @id = id
+    @id = Time.now
     @user_id = user_id
-    @affirmation_text_array = []
     @date = date
+    @_affirmation_ojects = nil
   end
 
-  def get_affirmation_text
-    Affirmation.get_affirmations(@user_id,@date)
+  def affirmation_objects
+    @_affirmation_objects ||= Affirmation.within_period_by_user(@user_id,@date)
   end
 
 end
