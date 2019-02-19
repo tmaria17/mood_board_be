@@ -1,4 +1,7 @@
+require 'crono/web'
+
 Rails.application.routes.draw do
+  mount Crono::Web, at: '/crono'
   root to: "welcome#index"
 
   namespace :api do

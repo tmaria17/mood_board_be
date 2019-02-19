@@ -1,0 +1,45 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://iam.bluemix.net/identity/token
+    body:
+      encoding: US-ASCII
+      string: grant_type=urn%3Aibm%3Aparams%3Aoauth%3Agrant-type%3Aapikey&apikey=<WATSON_DEV_API_KEY>
+    headers:
+      Authorization:
+      - Basic Yng6Yng=
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept:
+      - application/json
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      content-type:
+      - application/json
+      content-length:
+      - '2398'
+      x-powered-by:
+      - Servlet/3.1
+      transaction-id:
+      - e26862945e2545b28f22d2bcffd0e289
+      content-language:
+      - en-US
+      date:
+      - Tue, 19 Feb 2019 19:44:18 GMT
+      connection:
+      - keep-alive
+      set-cookie:
+      - sessioncookie=a3af07cb750bef953029445e78b77c4a; Path=/; Secure; HttpOnly
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"eyJraWQiOiIyMDE3MTEyOSIsImFsZyI6IlJTMjU2In0.eyJpYW1faWQiOiJpYW0tU2VydmljZUlkLTMwMTc2YmE3LTllNDQtNGI5My1iMThlLWJmYzQzM2NmYTVkZCIsImlkIjoiaWFtLVNlcnZpY2VJZC0zMDE3NmJhNy05ZTQ0LTRiOTMtYjE4ZS1iZmM0MzNjZmE1ZGQiLCJyZWFsbWlkIjoiaWFtIiwiaWRlbnRpZmllciI6IlNlcnZpY2VJZC0zMDE3NmJhNy05ZTQ0LTRiOTMtYjE4ZS1iZmM0MzNjZmE1ZGQiLCJzdWIiOiJTZXJ2aWNlSWQtMzAxNzZiYTctOWU0NC00YjkzLWIxOGUtYmZjNDMzY2ZhNWRkIiwic3ViX3R5cGUiOiJTZXJ2aWNlSWQiLCJ1bmlxdWVfaW5zdGFuY2VfY3JucyI6WyJjcm46djE6Ymx1ZW1peDpwdWJsaWM6dG9uZS1hbmFseXplcjp1cy1zb3V0aDphLzAxZDIyMWJjZmVhODQxNjM4NWU5MWRlMDhiYTg5MTZkOjQ0MDRlMTYzLTg5YTMtNDNlNi1hOTE0LTgwYzkwYmY5YTljMTo6Il0sImFjY291bnQiOnsidmFsaWQiOnRydWUsImJzcyI6IjAxZDIyMWJjZmVhODQxNjM4NWU5MWRlMDhiYTg5MTZkIn0sImlhdCI6MTU1MDYwNTQ1OCwiZXhwIjoxNTUwNjA5MDU4LCJpc3MiOiJodHRwczovL2lhbS5ibHVlbWl4Lm5ldC9pZGVudGl0eSIsImdyYW50X3R5cGUiOiJ1cm46aWJtOnBhcmFtczpvYXV0aDpncmFudC10eXBlOmFwaWtleSIsInNjb3BlIjoiaWJtIG9wZW5pZCIsImNsaWVudF9pZCI6ImJ4IiwiYWNyIjoxLCJhbXIiOlsicHdkIl19.Bb7cYA8f9Htz1w2LgaWrZdm0qyLJRSRzYtVULvf0ra49QN6QUfAmFPkH7qxZpubDNNDrOt-9GzYrWeSrKFly5a_iMKCVtWnZKVXiJEu3SPfFz92d0vs6JmfHR0uCd_yvKHLt7bfDhuzUG4qSffqxBM59eiMgK7AdiqdwPoLGGDY0vzEzSqHpliUXt0uwHeFE1vx4pLKSt7ykrNbCQOTATal2OcmYV2DaDrO52lky4Ih_CrYxeQtd8OMYb7rda-XIWV8wZB0XtnWuo7VPs05SROymFzgnJmoci_X-UWOKfaMngpVQOGrJX-ebESHU5LYkHD_uyAuEPoUzVReICpiPsw","refresh_token":"ReWDWn4t4JuCe_SFQrmCcaiLeT8iEOrFTi1L2KHOxxmdlcPRNE8RqMB_XW4VWsCpjcWT3v6AB6tRZMHD6Qu5xKChiWmaEZYPeZb8BYcWNYBMFM4sYItELI0uBAGfhBjBEismYq2Al8229ZmZXWpXHZFY_3xwH74sYwLwy5Or06MrHqSybwVHJO5KV-49gNZjhbjqiYdBCenii0HnTe5fGty6YUl8qbZH_MmCY9pqnlt-jGwiX0RrSp3IUnCFHoKJi9CcsxGbWMd13sDINrk_oVl0KZ2C88F2OArndLtM2NrSs3pKHN8MOkBPljQIV34ricE15fT3d92WSncUX9v5qQE6Hni4Ljer5d1Qq9bUHcdhTTDmpsGcxY__A1wzkGQ9we-YfeLehCRBCmJ6KYoYpsqzoX7W3zW4jL_p6RwXxQznQsWxfXih4GiLwTNhoLZIRFC5AkV9KbizTqLZkV7b-OPcA0Izne7RRQzwz-jFD6kRYkM160swE4FY3Vhsf3B6q24zis8GIosH6CXLweBIMELifP7nrC0yk7HGZju58M6TiF3lypeOBhv50G9xQfhntzr3-Hq2LOl105eEtfgtu49zQJyWiisOLKUlDCY9A_m1I-8TmOZRFVIONclrvv88ALgF1pjaxYIX6mZ44ZMPMR5z3adoXpHWlMv8VbAQ3KaYVX85CliHApIN3-u0C9Cbb4OWLEAvG5Cx1DCXMQgvXxDPscS-LjHIbHyCRGAhTnNF6uY-kFWoHK-81gd5UP0NAQKJ6K_N3utQTviXUOukRaDfOwIN8bbTnlngFFromS-_TsW9133_TE4JL3Z1KzfI_vKBB8zfcXcrDHi0eIKbYLn_Emij7KR1deARanAZRxN0Bca2Dlmn2nXSPAuu0eF8DWKhUHoT27lqXiO6qHBC3Y7zB1Et66ZVogiTX0BGtKpLVzT4e59dXGuinMW-sQFHUahsmaJATKseHPKSieRZtiWP","token_type":"Bearer","expires_in":3600,"expiration":1550609058,"scope":"ibm
+        openid"}'
+    http_version: 
+  recorded_at: Tue, 19 Feb 2019 19:44:18 GMT
+recorded_with: VCR 4.0.0
