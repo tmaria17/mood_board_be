@@ -25,9 +25,9 @@ describe "Affirmation Endpoints" do
   it 'POSTS affirmations' do
     user = create(:user)
 
-    post_params =  {
+    post_params =  { affirmation: {
       'affirmation_text': "I am awesome! "
-        }
+        }}
 
     post "/api/v1/users/#{user.id}/affirmations?date=today", params: post_params
 
