@@ -1,8 +1,8 @@
 require "rails_helper"
 require "date"
 
-describe "GET /api/v1/users/:id/affirmations?date=YYYY-MM" do
-  it "Returns the all affirmations for queired month" do
+describe "Affirmation Endpoints" do
+  it "it GETS affirmations" do
     user_1 = create(:user)
     user_2 = User.new(name: "Jake", email: "ilikeshakes@gmail.com", password: "cat")
 
@@ -21,5 +21,18 @@ describe "GET /api/v1/users/:id/affirmations?date=YYYY-MM" do
     expect(affirmations[:data][:type]).to eq("affirmation_wrapper")
     expect(affirmations[:data][:attributes]).to have_key(:affirmations)
     expect(affirmations[:data][:attributes][:affirmations].class).to eq(Array)
+  end
+  it 'POSTS affirmations' do
+    user = create(:user)
+
+    post_params =  {
+      'affirmation_text': "I am awesome! "
+        }
+
+    post "/api/v1/users/#{user.id}/affirmations?date=today", params: post_params
+
+    expect(response).to be_successful
+    expect(user.affirmations.length).to eq(1)
+    expect(user.affirmations.first.affirmation_text).to eq("I am awesome! ")
   end
 end
