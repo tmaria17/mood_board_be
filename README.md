@@ -7,9 +7,11 @@
 
 MoodBoard API is a RESTful API built in Rails 5.2.
 
-Please review the below instructions to get WeatherBug up and running on your local machine for development and testing purposes.
+Please review the below instructions to get mood_board_be up and running on your local machine for development and testing purposes.
 
-The base URL for the API is https://mood-board-be.herokuapp.com/.
+The base URL for the API is https://mood-board-be.herokuapp.com/. <br>
+Visit the deployed app here: https://moodboard-1808.herokuapp.com/.<br>
+Visit the front end repo  here: https://github.com/ashtonkbailey/MoodBoard-FE.
 
 ## Table of Contents
 
@@ -221,66 +223,59 @@ JSON Response:
 {
     "data": [
         {
-            "id": "2019-02-12",
+            "id": "12",
             "type": "tone_response",
             "attributes": {
                 "primary_tone": "confident"
             }
         },
         {
-            "id": "2019-02-18",
+            "id": "18",
             "type": "tone_response",
             "attributes": {
                 "primary_tone": "anger"
             }
         },
         {
-            "id": "2019-02-17",
+            "id": "17",
             "type": "tone_response",
             "attributes": {
                 "primary_tone": "sadness"
             }
         },
         {
-            "id": "2019-02-16",
+            "id": "16",
             "type": "tone_response",
             "attributes": {
                 "primary_tone": "tentative"
             }
         },
         {
-            "id": "2019-02-15",
+            "id": "15",
             "type": "tone_response",
             "attributes": {
                 "primary_tone": "joy"
             }
         },
         {
-            "id": "2019-02-14",
+            "id": "14",
             "type": "tone_response",
             "attributes": {
                 "primary_tone": "confident"
             }
         },
         {
-            "id": "2019-02-13",
+            "id": "13",
             "type": "tone_response",
             "attributes": {
                 "primary_tone": "analytical"
             }
         },
         {
-            "id": "2019-02-11",
+            "id": "11",
             "type": "tone_response",
             "attributes": {
                 "primary_tone": "fear"
-            }
-        },
-        {
-            "id": "2019-02-19",
-            "type": "tone_response",
-            "attributes": {
-                "primary_tone": "sadness"
             }
         }
     ]
@@ -295,6 +290,7 @@ JSON Response:
 * PG v. 1.1.3
 
 ## APIs Consumed (keys required) / External Services
+[Watson]([Watson](https://www.javascript.com/)
 
 
 ## Testing Dependencies
@@ -316,7 +312,9 @@ JSON Response:
 
 ## Installation
 Clone down this repository, change into the root directory and run:
+` git clone git@github.com:tmaria17/mood_board_be.git`
 
+Run
 `bundle`
 
 To setup the database necessary for this API, run the following commands:
@@ -330,3 +328,15 @@ To setup the database necessary for this API, run the following commands:
 Run `bundle exec rspec` to run the full test suite.
 
 Run `bundle exec rspec <TEST FILE PATH>` to run a specific test
+
+## Known Issues
+* Implement OAuth
+
+## How to Contribute
+To contribute to this project please fork this repo and submit a pull request.
+
+
+## Core Contributors
+* [Maria Torres](https://github.com/tmaria17)
+
+* [Amy Petrie](https://github.com/amypetrie)
