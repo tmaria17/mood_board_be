@@ -7,9 +7,11 @@
 
 MoodBoard API is a RESTful API built in Rails 5.2.
 
-Please review the below instructions to get WeatherBug up and running on your local machine for development and testing purposes.
+Please review the below instructions to get mood_board_be up and running on your local machine for development and testing purposes.
 
-The base URL for the API is https://mood-board-be.herokuapp.com/.
+The base URL for the API is https://mood-board-be.herokuapp.com/. <br>
+Visit the deployed app here: https://moodboard-1808.herokuapp.com/.<br>
+Visit the front end repo  here: https://github.com/ashtonkbailey/MoodBoard-FE.
 
 ## Table of Contents
 
