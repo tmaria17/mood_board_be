@@ -1,4 +1,7 @@
 # MoodBoard API
+[![Waffle.io - Columns and their card count](https://badge.waffle.io/tmaria17/mood_board_be.svg?columns=all)](https://waffle.io/tmaria17/mood_board_be)
+
+[![Build Status](https://travis-ci.org/tmaria17/mood_board_be.svg?branch=master)](https://travis-ci.org/tmaria17/mood_board_be)
 
 MoodBoard API is a RESTful API built in Rails 5.2.
 
