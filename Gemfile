@@ -15,6 +15,7 @@ gem 'rack-cors', require: 'rack/cors'
 gem 'crono'
 gem 'haml'
 gem 'sinatra', require: nil
+gem 'actionpack-action_caching'
 
 
 group :development, :test do
