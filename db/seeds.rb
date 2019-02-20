@@ -2,7 +2,7 @@ require 'date'
 
 current_date = Date.today
 
-user_1 = User.create(name: "Kelly Smith", password: "password", email: "kelly_smith@email.com")
+user_1 = User.create(name: "Kelly Smith", password: "password", email: "kelly_smith@email.com", refresh_token: "ReWxYFNYJdA-O7_fn65R0Irx47VE39aZTQtkVbL8NWrj9rricJvq6kcOm2jCx5hQVDAorovhTaE2CkPAQviCs5z_1W_l-zR1y-JIiqmlKaflKt1wZIyBbzyrRJ_-RBCDcu1RLDHticJ-6E7jkvxTnYha7p1roPH9XxIDinqfDmnR-fSkc6XPCKkRn5R_To-yTGQXH5FRaFbVRd-T5R8doYB3Ck4nownlDUaII2e7JwPwNcOLbDrb-E_uhScnWt7wISI4-P9bu3kpzQQBoH9HTx8y4AQ6h2A_R0_cMZW94bmWBze8q0AquwdjuMHNi2nwoAq3GE3hGzWP9OIvhyDscNpdVaakVMpCc1BrzPktznYTrZO5EgQIHISipTxkqZ-8PqQX7ldnmw0iA-A4MwiV0tHH1iNCN3GtmINVkx2g6U5xspWVcrihyuIEJMF4QqgXCkCr7vWMuwKIMIX1S2D_lw4h6wz61TmR86beF9_13Xs9INzbhL7IYTkR49_XuwXAovQozqVfdrYBELXQf2ZVoexpe4IgLCVVcguU-8cIYtokXiS9kFn8tki6atTxBb8zFkGO3HVio-LSE9bx2FLald_it4_muWBFkSk24xZ8c8yGq978gHRTJRt6P5JIjKJIEgWbXzbne5NV7vwpXFisSQMEUpsa0MXTuAbPRhmxnMV6zfDHDKYbzNBLoMgKyPDRIxN5GHwbGWfmbfVIQeat19WtvoT8y1BlQYCj7aHkwTJKwZvN2CKCGwd3d_AM_fSEd1u0AzUPzY2WKiFfIRB2smREg-ETrBRixmh39tenqiS9FzxcTD7WITKQM8OeZkRuR3e-nLOfaA_CpgtFsysGRDvcApDhMLW9Q2pc8OqtcnTwM9QFzaK2RENQ_WvjsIR_dv1odUA7wM-WyjTFBa36u350qmpZwDxpSKLaFISkx19yJToaqmuJfNFT2kHJ-JEn-P5ldI9peMr7MvfTUISZO-sP")
 
 Affirmation.create(created_at: current_date - 7.days, affirmation_text: "I am beautiful.", user: user_1)
 Affirmation.create(created_at: current_date - 1.days, affirmation_text: "I am kind.", user: user_1)
