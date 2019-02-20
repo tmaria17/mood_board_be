@@ -319,7 +319,9 @@ JSON Response:
 
 ## Installation
 Clone down this repository, change into the root directory and run:
+` git clone git@github.com:tmaria17/mood_board_be.git`
 
+Run
 `bundle`
 
 To setup the database necessary for this API, run the following commands:
@@ -333,3 +335,15 @@ To setup the database necessary for this API, run the following commands:
 Run `bundle exec rspec` to run the full test suite.
 
 Run `bundle exec rspec <TEST FILE PATH>` to run a specific test
+
+## Known Issues
+* Implement OAuth
+
+## How to Contribute
+To contribute to this project please fork this repo and submit a pull request.
+
+
+## Core Contributors
+* [Maria Torres](https://github.com/tmaria17)
+
+* [Amy Petrie](https://github.com/amypetrie)
