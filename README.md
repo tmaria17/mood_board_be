@@ -223,66 +223,59 @@ JSON Response:
 {
     "data": [
         {
-            "id": "2019-02-12",
+            "id": "12",
             "type": "tone_response",
             "attributes": {
                 "primary_tone": "confident"
             }
         },
         {
-            "id": "2019-02-18",
+            "id": "18",
             "type": "tone_response",
             "attributes": {
                 "primary_tone": "anger"
             }
         },
         {
-            "id": "2019-02-17",
+            "id": "17",
             "type": "tone_response",
             "attributes": {
                 "primary_tone": "sadness"
             }
         },
         {
-            "id": "2019-02-16",
+            "id": "16",
             "type": "tone_response",
             "attributes": {
                 "primary_tone": "tentative"
             }
         },
         {
-            "id": "2019-02-15",
+            "id": "15",
             "type": "tone_response",
             "attributes": {
                 "primary_tone": "joy"
             }
         },
         {
-            "id": "2019-02-14",
+            "id": "14",
             "type": "tone_response",
             "attributes": {
                 "primary_tone": "confident"
             }
         },
         {
-            "id": "2019-02-13",
+            "id": "13",
             "type": "tone_response",
             "attributes": {
                 "primary_tone": "analytical"
             }
         },
         {
-            "id": "2019-02-11",
+            "id": "11",
             "type": "tone_response",
             "attributes": {
                 "primary_tone": "fear"
-            }
-        },
-        {
-            "id": "2019-02-19",
-            "type": "tone_response",
-            "attributes": {
-                "primary_tone": "sadness"
             }
         }
     ]
