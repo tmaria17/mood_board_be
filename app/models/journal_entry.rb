@@ -33,11 +33,11 @@ class JournalEntry < ApplicationRecord
 
   private
     def ibm_authorization_service
-      @service ||= IbmApiAuthService.new
+      @service ||= IbmApiAuthService.new(self.user_id)
     end
 
     def tone_analyzer_service
-      token = ibm_authorization_service.access_token
+      token = ibm_authorization_service.refresh_access_token
       WatsonToneService.new(self.entry_text, token)
     end
 

@@ -6,8 +6,8 @@ describe WatsonToneService do
   end
   it "returns a tone" do
       ibm_auth = IbmApiAuthService.new
-      token = ibm_auth.access_token
-    VCR.use_cassette("watson_tone_request") do
+      token = ENV['WATSON_DEV_BEARER_KEY']
+      VCR.use_cassette("watson_tone_request") do
       service = WatsonToneService.new("dogs are awesome", token)
       results = service.get_tone
 
