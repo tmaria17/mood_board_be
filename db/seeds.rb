@@ -42,6 +42,4 @@ entry_7 = JournalEntry.create(entry_text: "I think finally I may have an actual 
 
 ToneResponse.create(primary_tone: "confident", primary_score: 0.77, journal_entry: entry_7, created_at: current_date - 7.days)
 
-entry_8 = JournalEntry.create(entry_text: "Today was actually really tough. I was late to work, and when I got in Sharon yelled at me. Like, actually yelled. Why is she such a bully?", user: user_1, created_at: current_date - 8.days)
-
 puts "seed done!"
