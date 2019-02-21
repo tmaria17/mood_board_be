@@ -290,7 +290,7 @@ JSON Response:
 * PG v. 1.1.3
 
 ## APIs Consumed (keys required) / External Services
-[Watson]([Watson](https://www.javascript.com/)
+[Watson]([Watson](https://www.javascript.com/))
 
 
 ## Testing Dependencies
