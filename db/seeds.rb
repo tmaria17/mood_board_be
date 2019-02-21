@@ -4,14 +4,6 @@ current_date = Date.today
 
 user_1 = User.create(name: "Kelly Smith", password: "password", email: "kelly_smith@email.com", refresh_token: "ReWxYFNYJdA-O7_fn65R0Irx47VE39aZTQtkVbL8NWrj9rricJvq6kcOm2jCx5hQVDAorovhTaE2CkPAQviCs5z_1W_l-zR1y-JIiqmlKaflKt1wZIyBbzyrRJ_-RBCDcu1RLDHticJ-6E7jkvxTnYha7p1roPH9XxIDinqfDmnR-fSkc6XPCKkRn5R_To-yTGQXH5FRaFbVRd-T5R8doYB3Ck4nownlDUaII2e7JwPwNcOLbDrb-E_uhScnWt7wISI4-P9bu3kpzQQBoH9HTx8y4AQ6h2A_R0_cMZW94bmWBze8q0AquwdjuMHNi2nwoAq3GE3hGzWP9OIvhyDscNpdVaakVMpCc1BrzPktznYTrZO5EgQIHISipTxkqZ-8PqQX7ldnmw0iA-A4MwiV0tHH1iNCN3GtmINVkx2g6U5xspWVcrihyuIEJMF4QqgXCkCr7vWMuwKIMIX1S2D_lw4h6wz61TmR86beF9_13Xs9INzbhL7IYTkR49_XuwXAovQozqVfdrYBELXQf2ZVoexpe4IgLCVVcguU-8cIYtokXiS9kFn8tki6atTxBb8zFkGO3HVio-LSE9bx2FLald_it4_muWBFkSk24xZ8c8yGq978gHRTJRt6P5JIjKJIEgWbXzbne5NV7vwpXFisSQMEUpsa0MXTuAbPRhmxnMV6zfDHDKYbzNBLoMgKyPDRIxN5GHwbGWfmbfVIQeat19WtvoT8y1BlQYCj7aHkwTJKwZvN2CKCGwd3d_AM_fSEd1u0AzUPzY2WKiFfIRB2smREg-ETrBRixmh39tenqiS9FzxcTD7WITKQM8OeZkRuR3e-nLOfaA_CpgtFsysGRDvcApDhMLW9Q2pc8OqtcnTwM9QFzaK2RENQ_WvjsIR_dv1odUA7wM-WyjTFBa36u350qmpZwDxpSKLaFISkx19yJToaqmuJfNFT2kHJ-JEn-P5ldI9peMr7MvfTUISZO-sP")
 
-Affirmation.create(created_at: current_date - 1.days, affirmation_text: "I am kind.", user: user_1)
-Affirmation.create(created_at: current_date - 2.days, affirmation_text: "I am smart.", user: user_1)
-Affirmation.create(created_at: current_date - 3.days, affirmation_text: "You can do this.", user: user_1)
-Affirmation.create(created_at: current_date - 4.days, affirmation_text: "Believe in yourself.", user: user_1)
-Affirmation.create(created_at: current_date - 5.days, affirmation_text: "You are loved.", user: user_1)
-Affirmation.create(created_at: current_date - 6.days, affirmation_text: "I am important.", user: user_1)
-Affirmation.create(created_at: current_date - 7.days, affirmation_text: "I am worthy.", user: user_1)
-
 entry_1 = JournalEntry.create(entry_text: "We had a quiet holiday - actually it got messed up. My father-in-law decided to act like an ass. So I had a bad start. Now I find I have a reacurring ear infection and am now on my second round of antibiotics - Why can't I get a damn break in my writing career? Is it so damn hard to be a writer? I'm so annoyed with all of this back and forth that goes nowhere. Its because of incompetent people in the publishing industry", user: user_1, created_at: current_date - 1.days)
 
 ToneResponse.create(primary_tone: "anger", primary_score: 0.57, journal_entry: entry_1, created_at: current_date - 1.days)
@@ -36,10 +28,21 @@ entry_6 = JournalEntry.create(entry_text: "Recently I started a blog. My boyfrie
 
 ToneResponse.create(primary_tone: "analytical", primary_score: 0.69, journal_entry: entry_6, created_at: current_date - 6.days)
 
-ToneResponse.create(primary_tone: "fear", primary_score: 0.69, journal_entry: entry_8, created_at: current_date - 8.days)
-
 entry_7 = JournalEntry.create(entry_text: "I think finally I may have an actual writing job. I have submitted some articles for a particular site. I have had alot of emails with this individual back and forth. Finally he has agreed to pay me for my work. I am awaiting answer this week as to the prior work. I would like to get some payment before I continue writing. I think that is only fair. I am crossing my fingers that everything works out. It is not alot of compensation, but I am going to fight for my personal worth.", user: user_1, created_at: current_date - 7.days)
 
 ToneResponse.create(primary_tone: "confident", primary_score: 0.77, journal_entry: entry_7, created_at: current_date - 7.days)
+
+entry_8 = JournalEntry.create(entry_text: "Today was actually really tough. I was late to work, and when I got in Sharon yelled at me. Like, actually yelled. Why is she such a bully?", user: user_1, created_at: current_date - 8.days)
+
+ToneResponse.create(primary_tone: "fear", primary_score: 0.69, journal_entry: entry_8, created_at: current_date - 8.days)
+
+Affirmation.create(created_at: current_date - 2.days, affirmation_text: "I am smart.", user: user_1)
+Affirmation.create(created_at: current_date - 2.days, affirmation_text: "I am smart.", user: user_1)
+Affirmation.create(created_at: current_date - 3.days, affirmation_text: "You can do this.", user: user_1)
+Affirmation.create(created_at: current_date - 4.days, affirmation_text: "Believe in yourself.", user: user_1)
+Affirmation.create(created_at: current_date - 5.days, affirmation_text: "You are loved.", user: user_1)
+Affirmation.create(created_at: current_date - 6.days, affirmation_text: "I am important.", user: user_1)
+Affirmation.create(created_at: current_date - 7.days, affirmation_text: "I am worthy.", user: user_1)
+Affirmation.create(created_at: current_date - 7.days, affirmation_text: "I am worthy.", user: user_1)
 
 puts "seed done!"
