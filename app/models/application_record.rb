@@ -10,8 +10,8 @@ class ApplicationRecord < ActiveRecord::Base
   end
 
   def self.within_period_by_user(user_id, date)
-    formatted_date = Date.strptime(date, '%Y-%m')
-    self.where(user_id: user_id).where(created_at: formatted_date.beginning_of_month..formatted_date.end_of_month)
+    queried_month = Date.strptime(date, '%Y-%m')
+    x = self.where(created_at: queried_month.beginning_of_month..queried_month.end_of_month).where(user_id: user_id)
   end
 
 end

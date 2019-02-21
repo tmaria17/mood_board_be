@@ -17,7 +17,8 @@ class CalendarDay
   end
 
   def journal_object
-    @_journal_object ||= JournalEntry.by_date_and_user(lookup_date, user_id)
+    queried_date = Date.parse(date)
+    @_journal_object ||= JournalEntry.where(created_at: queried_date).where(user_id: user_id).first
   end
 
   def tone_object
@@ -26,7 +27,8 @@ class CalendarDay
   end
 
   def affirmation_objects
-    @_affirmation_objects ||= Affirmation.by_date_and_user(lookup_date, user_id, true)
+    queried_date = Date.parse(date)
+    @_affirmation_objects ||= Affirmation.where(created_at: queried_date.beginning_of_day..queried_date.end_of_day).where(user_id: user_id)
   end
 
   def journal_entry_text

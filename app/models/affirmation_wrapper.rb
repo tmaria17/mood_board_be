@@ -8,7 +8,7 @@ class AffirmationWrapper
   end
 
   def affirmation_objects
-    @_affirmation_objects ||= Affirmation.within_period_by_user(@user_id,@date)
+    @_affirmation_objects ||= Affirmation.within_period_by_user(user_id,date)
   end
 
 end
