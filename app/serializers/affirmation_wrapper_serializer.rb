@@ -9,7 +9,11 @@ class AffirmationWrapperSerializer
       date = (aff.created_at).strftime('%Y-%m-%d')
       hash[:date] = date
       hash[:affirmation_text] = aff.affirmation_text
-      hash[:tone] = user.tone_responses.where(created_at: date).first.primary_tone
+      if user.tone_responses.where(created_at: date).first == nil
+        hash[:tone] = "undeterminable"
+      else
+        hash[:tone] = user.tone_responses.where(created_at: date).first.primary_tone
+      end
       hash
     end
   end
